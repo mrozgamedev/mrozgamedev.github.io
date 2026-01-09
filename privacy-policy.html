@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy — Mróz GameDev</title>
+  <meta name="description" content="Privacy Policy for the Mróz GameDev website." />
+  <style>
+    :root{
+      --bg0:#070a12; --bg1:#0b1020;
+      --card: rgba(255,255,255,.06);
+      --line: rgba(255,255,255,.10);
+      --text:#e7e9ee; --muted: rgba(231,233,238,.72);
+      --accent1:#7c3aed; --accent2:#38bdf8;
+      --max: 920px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 5%, rgba(124,58,237,.18), transparent 60%),
+        radial-gradient(900px 520px at 85% 10%, rgba(56,189,248,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 28px 18px 80px;}
+    .top{
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding: 10px 0 18px;
+    }
+    .brand{
+      font-weight:900;
+      letter-spacing:-.02em;
+      background: linear-gradient(90deg, rgba(167,139,250,1), rgba(56,189,248,1));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      font-size: 18px;
+    }
+    .back{
+      text-decoration:none;
+      font-size: 13px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .back:hover{border-color: rgba(56,189,248,.28); background: rgba(124,58,237,.10);}
+    .card{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 18px 70px rgba(0,0,0,.28);
+    }
+    h1{
+      margin:0 0 8px;
+      font-size: 28px;
+      letter-spacing:-.03em;
+    }
+    p, li{
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    h2{
+      margin: 18px 0 8px;
+      font-size: 16px;
+      color: rgba(231,233,238,.92);
+    }
+    .meta{
+      margin-top: 6px;
+      font-size: 12px;
+      color: rgba(231,233,238,.58);
+    }
+    ul{margin: 8px 0 0 18px;}
+    footer{
+      margin-top: 18px;
+      text-align:center;
+      color: rgba(231,233,238,.58);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div class="brand">Mróz GameDev</div>
+      <a class="back" href="./">← Back to Home</a>
+    </div>
+
+    <section class="card">
+      <h1>Privacy Policy</h1>
+      <div class="meta">Last updated: <span id="d"></span></div>
+
+      <p>
+        This Privacy Policy explains how the <strong>Mróz GameDev</strong> website (“Website”) is operated by
+        <strong>Swetłana Mróz</strong> and what information may be processed when you visit it.
+      </p>
+
+      <h2>1. Data We Collect</h2>
+      <p>
+        The Website is a simple informational page. We do not require registration and we do not intentionally collect
+        personal data through forms.
+      </p>
+
+      <h2>2. Contact Information</h2>
+      <p>
+        If you contact us by email or phone, we will receive the information you provide (for example, your email address
+        and message content). We use this information only to respond to your request.
+      </p>
+
+      <h2>3. Cookies</h2>
+      <p>
+        This Website does not use tracking cookies by design. However, the hosting platform and your browser may use
+        essential technical mechanisms (for example, caching) to display the Website properly.
+      </p>
+
+      <h2>4. Hosting & Server Logs</h2>
+      <p>
+        The Website may be hosted on a third-party platform (e.g., GitHub Pages). Like most hosting providers, it may
+        process basic technical log data for security and maintenance purposes (such as IP address, user agent, and
+        request time).
+      </p>
+
+      <h2>5. Third-Party Links</h2>
+      <p>
+        The Website may contain links to external websites (for example, app store pages). We are not responsible for
+        the privacy practices of those third-party websites.
+      </p>
+
+      <h2>6. Children’s Privacy</h2>
+      <p>
+        The Website is not directed to children and does not knowingly collect personal information from children.
+      </p>
+
+      <h2>7. Changes</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date.
+      </p>
+
+      <h2>8. Contact</h2>
+      <p>
+        Owner: <strong>Swetłana Mróz</strong><br />
+        Developer name: <strong>Mróz GameDev</strong><br />
+        Email: <a href="mailto:swetlanamroz@gmail.com">swetlanamroz@gmail.com</a><br />
+        Phone: <a href="tel:+48886779962">+48 886 779 962</a>
+      </p>
+    </section>
+
+    <footer>© <span id="y"></span> Mróz GameDev</footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    const dd = new Date();
+    document.getElementById("d").textContent = dd.toISOString().slice(0,10);
+  </script>
+</body>
+</html>
