@@ -333,14 +333,33 @@
     }
 
     .iconWrap{
-      width: 46px; height: 46px;
-      border-radius: 16px;
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
       border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(135deg, rgba(124,58,237,.18), rgba(56,189,248,.12));
+      background: linear-gradient(135deg, rgba(124,58,237,.16), rgba(56,189,248,.10));
       display:grid;
       place-items:center;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      flex: 0 0 auto;
+      overflow:hidden;
     }
+
+    .iconWrap.iconImg{
+      padding: 6px; /* gives inner breathing room */
+    }
+
+    .iconWrap.iconImg img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+
+    
     .card h3{
       margin: 0 0 6px;
       font-size: 16px;
