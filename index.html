@@ -364,41 +364,52 @@
 
     /* ===== Contacts ===== */
     .contactBox{
-      border-radius: calc(var(--radius) + 6px);
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      backdrop-filter: blur(10px);
-      padding: 18px;
-      box-shadow: 0 14px 50px rgba(0,0,0,.25);
-      display:grid;
-      gap: 10px;
-    }
-    .contactRow{
-      display:flex;
-      gap: 12px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(7,10,18,.35);
-      padding: 12px 14px;
-      border-radius: 16px;
-    }
-    .contactRow span{
-      color: rgba(231,233,238,.70);
-      font-size: 13px;
-    }
-    .contactRow a{
-      font-weight: 800;
-      letter-spacing: .2px;
-      color: rgba(231,233,238,.92);
-    }
-    .contactRow a:hover{
-      color: white;
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
-    }
+  width: min(640px, 100%);
+  margin: 0 auto;
+  border-radius: calc(var(--radius) + 10px);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(12px);
+  padding: 18px;
+  box-shadow: 0 18px 70px rgba(0,0,0,.28);
+  display:grid;
+  gap: 12px;
+}
+
+.contactRow{
+  display:flex;
+  gap: 14px;
+  align-items:center;
+  justify-content:space-between;
+  border: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(90deg, rgba(124,58,237,.10), rgba(56,189,248,.06));
+  padding: 14px 16px;
+  border-radius: 18px;
+}
+
+.contactRow span{
+  color: rgba(231,233,238,.72);
+  font-size: 13px;
+  letter-spacing: .2px;
+}
+
+.contactRow a{
+  font-weight: 900;
+  letter-spacing: .2px;
+  color: rgba(231,233,238,.95);
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(7,10,18,.35);
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+
+.contactRow a:hover{
+  transform: translateY(-1px);
+  border-color: rgba(56,189,248,.28);
+  background: rgba(124,58,237,.10);
+  text-decoration: none;
+}
 
     /* ===== Footer ===== */
     footer{
@@ -412,6 +423,11 @@
       gap: 10px;
       flex-wrap:wrap;
     }
+
+    .footerCenter{
+  justify-content: center;
+  text-align: center;
+}
 
     /* ===== Modal ===== */
     .modal{
@@ -567,8 +583,7 @@
           <h1>Mróz GameDev</h1>
 
           <p class="tagline">
-            Minimalist indie games with a clean UI, cozy vibes, and polished details —
-            explore my <strong>projects</strong>
+            Small games with big atmosphere — discover my <strong>projects</strong>
           </p>
 
           <div class="ctaRow">
@@ -577,8 +592,6 @@
               projects →
             </a>
           </div>
-
-          <div class="hint">Click a project card to view details and a vertical screenshot.</div>
         </div>
       </div>
     </section>
@@ -588,7 +601,6 @@
       <div class="sectionTitle">
         <div>
           <h2>Projects</h2>
-          <p>One released app and two currently in development.</p>
         </div>
       </div>
 
@@ -670,7 +682,6 @@
       <div class="sectionTitle">
         <div>
           <h2>Contact</h2>
-          <p>For business inquiries and support.</p>
         </div>
       </div>
 
@@ -686,10 +697,9 @@
       </div>
     </section>
 
-    <footer>
-      <div>© <span id="y"></span> Mróz GameDev</div>
-      <div style="color:rgba(231,233,238,.55)">Made for Google Play verification & public info</div>
-    </footer>
+    <footer class="footerCenter">
+        <div>© <span id="y"></span> Mróz GameDev</div>
+      </footer>
   </main>
 
   <!-- Modal -->
