@@ -1,1 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Privacy Policy – Dangerous Village</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for the mobile game Dangerous Village by Mróz GameDev." />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    p, li {
+      font-size: 14px;
+    }
+    ul {
+      margin-left: 18px;
+    }
+    .meta {
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #555;
+      text-align: center;
+    }
+    a {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      Last updated: <span id="date"></span>
+    </div>
 
+    <p>
+      This Privacy Policy describes how <strong>Mróz GameDev</strong> ("Developer", "we", "us")
+      collects, uses, and protects information when you use the mobile game
+      <strong>Dangerous Village</strong> ("Game").
+    </p>
+
+    <h2>1. Information Collection and Use</h2>
+    <p>
+      Dangerous Village is designed to be played without requiring any personal information.
+      We do not require user registration and do not knowingly collect personally identifiable data.
+    </p>
+
+    <h2>2. Personal Data</h2>
+    <p>
+      The Game does not collect, store, or share personal data such as name, email address,
+      phone number, precise location, or any other identifying information.
+    </p>
+
+    <h2>3. Device Information</h2>
+    <p>
+      We do not intentionally collect device identifiers or sensitive device information.
+      Basic technical information may be processed automatically by the operating system
+      for the purpose of running the Game properly.
+    </p>
+
+    <h2>4. Third-Party Services</h2>
+    <p>
+      Dangerous Village does not use third-party analytics tools, advertising networks,
+      or external SDKs that collect user data.
+    </p>
+
+    <h2>5. Children’s Privacy</h2>
+    <p>
+      The Game is not specifically directed at children under the age of 13.
+      We do not knowingly collect personal information from children.
+      If you believe that a child has provided personal data, please contact us so we can take appropriate action.
+    </p>
+
+    <h2>6. Data Security</h2>
+    <p>
+      Since no personal data is collected, stored, or transmitted by the Game,
+      there is no risk of personal data leakage from our systems.
+    </p>
+
+    <h2>7. Changes to This Privacy Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time.
+      Any changes will be reflected on this page with an updated revision date.
+    </p>
+
+    <h2>8. Contact Information</h2>
+    <p>
+      If you have any questions or concerns about this Privacy Policy, you may contact us:
+    </p>
+    <ul>
+      <li>Developer: <strong>Mróz GameDev</strong></li>
+      <li>Owner: <strong>Swetłana Mróz</strong></li>
+      <li>Email: <a href="mailto:swetlanamroz@gmail.com">swetlanamroz@gmail.com</a></li>
+    </ul>
+
+    <footer>
+      © <span id="year"></span> Mróz GameDev
+    </footer>
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById("year").textContent = d.getFullYear();
+    document.getElementById("date").textContent = d.toISOString().slice(0, 10);
+  </script>
+</body>
+</html>
