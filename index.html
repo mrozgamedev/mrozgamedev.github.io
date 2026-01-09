@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mróz GameDev</title>
+  <meta name="description" content="Mróz GameDev — indie mobile games. Projects, contacts, and official pages." />
+
+  <style>
+    :root{
+      --bg0:#070a12;
+      --bg1:#0b1020;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(17,24,39,.55);
+      --line: rgba(255,255,255,.10);
+      --text:#e7e9ee;
+      --muted: rgba(231,233,238,.72);
+
+      --accent1:#7c3aed; /* violet */
+      --accent2:#38bdf8; /* sky */
+      --accent3:#a78bfa;
+
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 5%, rgba(124,58,237,.18), transparent 60%),
+        radial-gradient(900px 520px at 85% 10%, rgba(56,189,248,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 22px 18px 90px; }
+
+    /* ===== Header ===== */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,10,18,.72), rgba(7,10,18,.45));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .topbar .inner{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 220px;
+    }
+    .brandLogo{
+      width: 38px; height: 38px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    .brandLogo img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .brandName{
+      font-size: 15px;
+      letter-spacing: .2px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+    .brandSub{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .nav a{
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.03);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      font-size: 13px;
+      color: rgba(231,233,238,.88);
+    }
+    .nav a:hover{
+      transform: translateY(-1px);
+      border-color: rgba(124,58,237,.45);
+      background: rgba(124,58,237,.10);
+    }
+
+    /* ===== Hero ===== */
+    .hero{
+      margin-top: 18px;
+      min-height: 78vh;
+      border-radius: calc(var(--radius) + 10px);
+      border: 1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      position:relative;
+      box-shadow: var(--shadow);
+      background: #0b0f1a;
+    }
+
+    /* background image (your banner) */
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image: url("banner.jpeg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+
+    /* soft overlay to match style */
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 540px at 18% 20%, rgba(56,189,248,.18), transparent 60%),
+        radial-gradient(700px 480px at 70% 10%, rgba(124,58,237,.18), transparent 62%),
+        linear-gradient(180deg, rgba(7,10,18,.35), rgba(7,10,18,.78));
+    }
+
+    .heroInner{
+      position:relative;
+      z-index:2;
+      padding: 54px 22px 36px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .heroCard{
+      width:min(760px, 100%);
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(10,14,24,.56);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 80px rgba(0,0,0,.55);
+      padding: 26px 20px 22px;
+    }
+
+    .heroLogo{
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      margin: 0 auto 14px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.06);
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      position:relative;
+      animation: floaty 3.8s ease-in-out infinite;
+    }
+    .heroLogo img{
+      width:100%; height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .heroLogoGlow{
+      position:absolute; inset:-30px;
+      background: radial-gradient(circle at 50% 40%, rgba(56,189,248,.28), transparent 58%),
+                  radial-gradient(circle at 30% 70%, rgba(124,58,237,.26), transparent 60%);
+      filter: blur(14px);
+      opacity: .85;
+      pointer-events:none;
+    }
+
+    @keyframes floaty{
+      0%,100%{ transform: translateY(0); }
+      50%{ transform: translateY(-6px); }
+    }
+
+    h1{
+      margin: 0 0 8px;
+      font-size: clamp(30px, 3.6vw, 46px);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      background: linear-gradient(90deg, rgba(167,139,250,1), rgba(56,189,248,1));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .tagline{
+      margin: 0 auto 14px;
+      max-width: 56ch;
+      color: rgba(231,233,238,.86);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    /* slogan where last word is projects -> button */
+    .tagline strong{
+      color: rgba(231,233,238,.96);
+      font-weight: 700;
+    }
+
+    .ctaRow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(124,58,237,.55);
+      background: linear-gradient(90deg, rgba(124,58,237,.18), rgba(56,189,248,.14));
+      box-shadow: 0 12px 35px rgba(124,58,237,.16);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .cta:hover{
+      transform: translateY(-1px);
+      border-color: rgba(56,189,248,.55);
+      background: linear-gradient(90deg, rgba(124,58,237,.22), rgba(56,189,248,.18));
+    }
+    .cta .dot{
+      width: 8px; height: 8px;
+      border-radius: 99px;
+      background: linear-gradient(180deg, var(--accent3), var(--accent2));
+      box-shadow: 0 0 18px rgba(56,189,248,.35);
+    }
+
+    .hint{
+      margin-top: 14px;
+      font-size: 12px;
+      color: rgba(231,233,238,.62);
+    }
+
+    /* ===== Sections ===== */
+    section{
+      margin-top: 26px;
+    }
+
+    .sectionTitle{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+      margin: 18px 4px 12px;
+    }
+    .sectionTitle h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -.01em;
+    }
+    .sectionTitle p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ===== Projects ===== */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      padding: 16px;
+      box-shadow: 0 14px 50px rgba(0,0,0,.25);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      position:relative;
+      overflow:hidden;
+      cursor:pointer;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(56,189,248,.28);
+      background: rgba(255,255,255,.055);
+    }
+    .badge{
+      position:absolute;
+      top: 12px; right: 12px;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,10,18,.45);
+      color: rgba(231,233,238,.86);
+    }
+    .badge.live{
+      border-color: rgba(56,189,248,.28);
+      box-shadow: 0 0 0 3px rgba(56,189,248,.06) inset;
+    }
+    .badge.dev{
+      border-color: rgba(167,139,250,.26);
+      box-shadow: 0 0 0 3px rgba(167,139,250,.06) inset;
+    }
+
+    .iconWrap{
+      width: 46px; height: 46px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(124,58,237,.18), rgba(56,189,248,.12));
+      display:grid;
+      place-items:center;
+      margin-bottom: 10px;
+    }
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing:-.01em;
+    }
+    .card p{
+      margin: 0;
+      color: rgba(231,233,238,.72);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .card .open{
+      margin-top: 12px;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(231,233,238,.86);
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(7,10,18,.35);
+    }
+
+    /* ===== Contacts ===== */
+    .contactBox{
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      padding: 18px;
+      box-shadow: 0 14px 50px rgba(0,0,0,.25);
+      display:grid;
+      gap: 10px;
+    }
+    .contactRow{
+      display:flex;
+      gap: 12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(7,10,18,.35);
+      padding: 12px 14px;
+      border-radius: 16px;
+    }
+    .contactRow span{
+      color: rgba(231,233,238,.70);
+      font-size: 13px;
+    }
+    .contactRow a{
+      font-weight: 800;
+      letter-spacing: .2px;
+      color: rgba(231,233,238,.92);
+    }
+    .contactRow a:hover{
+      color: white;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+    /* ===== Footer ===== */
+    footer{
+      margin-top: 26px;
+      color: rgba(231,233,238,.60);
+      font-size: 12px;
+      padding: 10px 6px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+
+    /* ===== Modal ===== */
+    .modal{
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      background: rgba(0,0,0,.65);
+      backdrop-filter: blur(6px);
+    }
+    .modal[aria-hidden="false"]{ display:flex; }
+
+    .modalPanel{
+      width: min(980px, 100%);
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(10,14,24,.72);
+      box-shadow: 0 25px 110px rgba(0,0,0,.65);
+      overflow:hidden;
+      position:relative;
+    }
+    .modalTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(90deg, rgba(124,58,237,.10), rgba(56,189,248,.08));
+    }
+    .modalTop strong{
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+    .closeBtn{
+      appearance:none;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(7,10,18,.35);
+      color: rgba(231,233,238,.9);
+      border-radius: 12px;
+      padding: 8px 10px;
+      cursor:pointer;
+      font-weight: 800;
+    }
+    .closeBtn:hover{
+      border-color: rgba(56,189,248,.28);
+    }
+
+    .modalBody{
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap: 0;
+    }
+    .shot{
+      padding: 16px;
+      border-right: 1px solid rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(7,10,18,.30);
+      min-height: 420px;
+    }
+    .shot img{
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 9/16;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      object-fit: cover;
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+    }
+
+    .desc{
+      padding: 18px 18px 22px;
+    }
+    .desc h4{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing:-.01em;
+      background: linear-gradient(90deg, rgba(167,139,250,1), rgba(56,189,248,1));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .desc p{
+      margin: 0 0 12px;
+      color: rgba(231,233,238,.76);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .meta{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .chip{
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,10,18,.35);
+      color: rgba(231,233,238,.78);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 980px){
+      .modalBody{ grid-template-columns: 1fr; }
+      .shot{ border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .shot img{ max-width: 320px; }
+      .grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">
+        <div class="brandLogo" aria-label="Logo">
+          <!-- Place your logo file in repo root as: logo.png -->
+          <img src="logo.png" alt="Mróz GameDev logo" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(124,58,237,.35), rgba(56,189,248,.22))'; this.parentElement.innerHTML='<strong style=&quot;font-size:12px;color:rgba(231,233,238,.9)&quot;>MG</strong>';">
+        </div>
+        <div>
+          <div class="brandName">Mróz GameDev</div>
+          <div class="brandSub">Swetłana Mróz</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="heroInner">
+        <div class="heroCard">
+          <div class="heroLogo" aria-label="Floating logo">
+            <div class="heroLogoGlow" aria-hidden="true"></div>
+            <img src="logo.png" alt="Mróz GameDev logo">
+          </div>
+
+          <h1>Mróz GameDev</h1>
+
+          <p class="tagline">
+            Minimalist indie games with a clean UI, cozy vibes, and polished details —
+            explore my <strong>projects</strong>
+          </p>
+
+          <div class="ctaRow">
+            <a class="cta" href="#projects" aria-label="Go to projects">
+              <span class="dot" aria-hidden="true"></span>
+              projects →
+            </a>
+          </div>
+
+          <div class="hint">Click a project card to view details and a vertical screenshot.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" aria-label="Projects">
+      <div class="sectionTitle">
+        <div>
+          <h2>Projects</h2>
+          <p>One released app and two currently in development.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- Project 1 (LIVE) -->
+        <article class="card" role="button" tabindex="0"
+                 data-title="Project One (Live)"
+                 data-shot="assets/app1.jpg"
+                 data-status="Live"
+                 data-desc="This is the active released application. Replace this text with the real store description: what the app does, key features, and what makes it special.">
+          <div class="badge live">ACTIVE</div>
+
+          <div class="iconWrap" aria-hidden="true">
+            <!-- inline svg icon -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M7.5 9.5h9c2.2 0 4 1.8 4 4v1.5c0 1.4-1.1 2.5-2.5 2.5h-1l-1.4-2h-7.2l-1.4 2h-1C3.6 20 2.5 18.9 2.5 17.5V13.5c0-2.2 1.8-4 4-4Z" stroke="rgba(231,233,238,.9)" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M9 13h2M8 14h2M15.8 13.2h.01M17.2 14.3h.01" stroke="rgba(56,189,248,.95)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <h3>Project One</h3>
+          <p>Released • Tap to open details</p>
+
+          <div class="open">
+            View details →
+          </div>
+        </article>
+
+        <!-- Project 2 (DEV) -->
+        <article class="card" role="button" tabindex="0"
+                 data-title="Project Two (In Development)"
+                 data-shot="assets/app2.jpg"
+                 data-status="In development"
+                 data-desc="Work in progress. Replace with a short pitch: genre, core mechanic, expected release, and what you’re experimenting with.">
+          <div class="badge dev">IN DEV</div>
+
+          <div class="iconWrap" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2l1.2 4.2L17.5 7 13.8 9.2 15 13.5 12 10.9 9 13.5l1.2-4.3L6.5 7l4.3-.8L12 2Z" stroke="rgba(231,233,238,.9)" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M5 20h14" stroke="rgba(167,139,250,.95)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <h3>Project Two</h3>
+          <p>In development • Tap to open details</p>
+
+          <div class="open">
+            View details →
+          </div>
+        </article>
+
+        <!-- Project 3 (DEV) -->
+        <article class="card" role="button" tabindex="0"
+                 data-title="Project Three (In Development)"
+                 data-shot="assets/app3.jpg"
+                 data-status="In development"
+                 data-desc="Work in progress. Replace with your real description: what the user does, progression, art style, and why it’s fun.">
+          <div class="badge dev">IN DEV</div>
+
+          <div class="iconWrap" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 21s-7-4.6-7-11a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 6.4-7 11-7 11Z" stroke="rgba(231,233,238,.9)" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M9.5 10.5h5" stroke="rgba(56,189,248,.95)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <h3>Project Three</h3>
+          <p>In development • Tap to open details</p>
+
+          <div class="open">
+            View details →
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-label="Contact">
+      <div class="sectionTitle">
+        <div>
+          <h2>Contact</h2>
+          <p>For business inquiries and support.</p>
+        </div>
+      </div>
+
+      <div class="contactBox">
+        <div class="contactRow">
+          <span>Email</span>
+          <a href="mailto:swetlanamroz@gmail.com">swetlanamroz@gmail.com</a>
+        </div>
+        <div class="contactRow">
+          <span>Phone</span>
+          <a href="tel:+48886779962">+48 886 779 962</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Mróz GameDev</div>
+      <div style="color:rgba(231,233,238,.55)">Made for Google Play verification & public info</div>
+    </footer>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true" aria-label="Project details dialog">
+    <div class="modalPanel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modalTop">
+        <strong id="modalTitle">Project</strong>
+        <button class="closeBtn" id="closeBtn" type="button" aria-label="Close">Close ✕</button>
+      </div>
+
+      <div class="modalBody">
+        <div class="shot">
+          <img id="modalShot" src="" alt="Project screenshot"
+               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22854%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%2310182a%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23aab2c0%22 font-family=%22Arial%22 font-size=%2230%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>Screenshot placeholder</text></svg>';">
+        </div>
+
+        <div class="desc">
+          <h4 id="modalName">Project</h4>
+          <p id="modalDesc">Description</p>
+
+          <div class="meta">
+            <span class="chip" id="modalStatus">Status</span>
+            <span class="chip">Mróz GameDev</span>
+            <span class="chip">Mobile • Android</span>
+          </div>
+
+          <p style="margin-top:14px;color:rgba(231,233,238,.62);font-size:12px;">
+            Tip: replace app names, descriptions, and screenshot file paths in the HTML (data-* attributes).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // footer year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const modal = document.getElementById("modal");
+    const closeBtn = document.getElementById("closeBtn");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalName = document.getElementById("modalName");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalShot = document.getElementById("modalShot");
+    const modalStatus = document.getElementById("modalStatus");
+
+    function openModal({title, desc, shot, status}) {
+      modalTitle.textContent = title;
+      modalName.textContent = title;
+      modalDesc.textContent = desc;
+      modalShot.src = shot;
+      modalStatus.textContent = status;
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    // open on card click
+    document.querySelectorAll(".card").forEach(card => {
+      const handler = () => openModal({
+        title: card.dataset.title || "Project",
+        desc: card.dataset.desc || "",
+        shot: card.dataset.shot || "",
+        status: card.dataset.status || ""
+      });
+
+      card.addEventListener("click", handler);
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handler(); }
+      });
+    });
+
+    // close handlers
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
+    });
+  </script>
+</body>
+</html>
