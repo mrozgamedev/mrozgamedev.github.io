@@ -384,6 +384,79 @@
       background: rgba(7,10,18,.35);
     }
 
+    /* ===== Centered project card ===== */
+
+.projectCenterCard{
+  padding: 22px 20px 26px;
+  text-align: center;
+}
+
+.projectCenter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icon (main clickable focus) */
+.projectIconCenter{
+  width: 92px;
+  height: 92px;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(
+    135deg,
+    rgba(124,58,237,.22),
+    rgba(56,189,248,.16)
+  );
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 0 0 6px rgba(124,58,237,.10),
+    0 20px 55px rgba(0,0,0,.55);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.projectIconCenter img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Hover / active feel */
+.projectCenterCard:hover .projectIconCenter{
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 0 0 8px rgba(124,58,237,.14),
+    0 28px 70px rgba(0,0,0,.65);
+}
+
+/* Text */
+.projectCenter h3{
+  margin: 6px 0 0;
+  font-size: 18px;
+  letter-spacing: -.01em;
+}
+
+.projectCenter p{
+  margin: 0;
+  font-size: 13px;
+  color: rgba(231,233,238,.72);
+}
+
+/* Mobile */
+@media (max-width: 600px){
+  .projectIconCenter{
+    width: 78px;
+    height: 78px;
+    border-radius: 22px;
+  }
+  .projectIconCenter img{
+    border-radius: 16px;
+  }
+}
+
     /* ===== Contacts ===== */
     .contactBox{
   width: min(640px, 100%);
@@ -628,58 +701,61 @@
       
         <div class="grid">
           <!-- Street Art (ACTIVE) -->
-          <article class="card" role="button" tabindex="0"
-                   data-title="Street Art"
-                   data-shot="assets/street-art.jpg"
-                   data-status="Active"
-                   data-desc="A released mobile game project. Replace this description with the real one: core gameplay, key features, and what makes it unique.">
-            <div class="badge live">ACTIVE</div>
-      
-            <div class="iconWrap iconImg" aria-hidden="true">
-              <img src="assets/icons/street-art.png" alt="" loading="lazy">
-            </div>
-      
-            <h3>Street Art</h3>
-            <p>Tap to open details</p>
-      
-            <div class="open">View details →</div>
-          </article>
+          <article class="card projectCenterCard" role="button" tabindex="0"
+          data-title="Street Art"
+          data-shot="assets/street-art.jpg"
+          data-status="Active"
+          data-desc="Street Art is a released mobile game focused on urban creativity, color, and atmosphere.">
+ 
+   <div class="badge live">ACTIVE</div>
+ 
+   <div class="projectCenter">
+     <div class="projectIconCenter">
+       <img src="assets/icons/street-art.png" alt="Street Art icon" loading="lazy">
+     </div>
+ 
+     <h3>Street Art</h3>
+     <p>Tap to open details</p>
+   </div>
+ </article>
       
           <!-- Dangerous Village (IN DEV) -->
-          <article class="card" role="button" tabindex="0"
-                   data-title="Dangerous Village"
-                   data-shot="assets/dangerous-village.jpg"
-                   data-status="In development"
-                   data-desc="In development. Replace with a short pitch: genre, core mechanic, mood, and what you’re building next.">
-            <div class="badge dev">IN DEV</div>
-      
-            <div class="iconWrap iconImg" aria-hidden="true">
-              <img src="assets/icons/dangerous-village.png" alt="" loading="lazy">
-            </div>
-      
-            <h3>Dangerous Village</h3>
-            <p>Tap to open details</p>
-      
-            <div class="open">View details →</div>
-          </article>
+          <article class="card projectCenterCard" role="button" tabindex="0"
+          data-title="Dangerous Village"
+          data-shot="assets/dangerous-village.jpg"
+          data-status="In development"
+          data-desc="Dangerous Village is a work-in-progress mobile game. Replace this text with the real pitch: genre, core gameplay loop, atmosphere, and what’s coming next.">
+ 
+   <div class="badge dev">IN DEV</div>
+ 
+   <div class="projectCenter">
+     <div class="projectIconCenter">
+       <img src="assets/icons/dangerous-village.png" alt="Dangerous Village icon" loading="lazy">
+     </div>
+ 
+     <h3>Dangerous Village</h3>
+     <p>Tap to open details</p>
+   </div>
+ </article>
       
           <!-- Fogbound (IN DEV) -->
-          <article class="card" role="button" tabindex="0"
-                   data-title="Fogbound"
-                   data-shot="assets/fogbound.jpg"
-                   data-status="In development"
-                   data-desc="In development. Replace with the real description: what the player does, progression, atmosphere, and why it’s fun.">
-            <div class="badge dev">IN DEV</div>
-      
-            <div class="iconWrap iconImg" aria-hidden="true">
-              <img src="assets/icons/fogbound.png" alt="" loading="lazy">
-            </div>
-      
-            <h3>Fogbound</h3>
-            <p>Tap to open details</p>
-      
-            <div class="open">View details →</div>
-          </article>
+          <article class="card projectCenterCard" role="button" tabindex="0"
+          data-title="Fogbound"
+          data-shot="assets/fogbound.jpg"
+          data-status="In development"
+          data-desc="Fogbound is a work-in-progress atmospheric mobile game. Replace this text with the real description: mood, mechanics, progression, and unique features.">
+ 
+   <div class="badge dev">IN DEV</div>
+ 
+   <div class="projectCenter">
+     <div class="projectIconCenter">
+       <img src="assets/icons/fogbound.png" alt="Fogbound icon" loading="lazy">
+     </div>
+ 
+     <h3>Fogbound</h3>
+     <p>Tap to open details</p>
+   </div>
+ </article>
         </div>
       </section>
 
