@@ -391,6 +391,11 @@
   text-align: center;
 }
 
+    /* Center single card on last row */
+.centeredCard{
+  grid-column: 2 / 3;
+}
+
 .projectCenter{
   display: flex;
   flex-direction: column;
@@ -760,7 +765,7 @@
       </section>
 
           <!-- Jumping Funny Ball (IN DEV) -->
-          <article class="card projectCenterCard" role="button" tabindex="0"
+          <article class="card projectCenterCard centeredCard" role="button" tabindex="0"
           data-title="Jumping Funny Ball"
           data-shot="assets/jump_ball.jpg"
           data-status="In development"
