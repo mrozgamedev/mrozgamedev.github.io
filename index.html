@@ -293,8 +293,8 @@
     /* ===== Projects ===== */
     .grid{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
     }
     .card{
       border-radius: var(--radius);
@@ -719,7 +719,7 @@
    </div>
  </article>
       
-          <!-- Dangerous Village (IN DEV) -->
+          <!-- Dangerous Village (ACTIVE) -->
           <article class="card projectCenterCard" role="button" tabindex="0"
           data-title="Dangerous Village"
           data-shot="assets/dangerous-village.jpg"
@@ -758,6 +758,25 @@
  </article>
         </div>
       </section>
+
+          <!-- Jumping Funny Ball (IN DEV) -->
+          <article class="card projectCenterCard" role="button" tabindex="0"
+          data-title="Jumping Funny Ball"
+          data-shot="assets/jump_ball.jpg"
+          data-status="In development"
+          data-desc="Swipe to keep the ball bouncing and beat your high score!">
+
+    <div class="badge dev">IN DEV</div>
+
+    <div class="projectCenter">
+    <div class="projectIconCenter">
+      <img src="assets/icons/jump_ball.png" alt="Jumping Funny Ball icon" loading="lazy">
+    </div>
+
+      <h3>Jumping Funny Ball</h3>
+    <p>Tap to open details</p>
+  </div>
+</article>      
 
     <!-- Contact -->
     <section id="contact" aria-label="Contact">
