@@ -391,16 +391,19 @@
   text-align: center;
 }
 
-    /* Center single card on last row */
-.centeredCard{
-  grid-column: 2 / 3;
-}
-
 .projectCenter{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+/* Center featured/single card on its own row (works with auto-fit) */
+.centeredCard{
+  max-width: 360px;      /* подгони по вкусу: 320–420 */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Icon (main clickable focus) */
@@ -731,7 +734,7 @@
           data-status="Active"
           data-desc="Jump across platforms and survive the dangerous village by perfect timing!">
  
-   <div class="badge dev">ACTIVE</div>
+   <div class="badge live">ACTIVE</div>
  
    <div class="projectCenter">
      <div class="projectIconCenter">
@@ -761,27 +764,27 @@
      <p>Tap to open details</p>
    </div>
  </article>
+
+           <!-- Jumping Funny Ball (IN DEV) -->
+           <article class="card projectCenterCard centeredCard" role="button" tabindex="0"
+           data-title="Jumping Funny Ball"
+           data-shot="assets/jump_ball.jpg"
+           data-status="In development"
+           data-desc="Swipe to keep the ball bouncing and beat your high score!">
+ 
+     <div class="badge dev">IN DEV</div>
+ 
+     <div class="projectCenter">
+     <div class="projectIconCenter">
+       <img src="assets/icons/jump_ball.png" alt="Jumping Funny Ball icon" loading="lazy">
+     </div>
+ 
+       <h3>Jumping Funny Ball</h3>
+     <p>Tap to open details</p>
+   </div>
+ </article> 
         </div>
-      </section>
-
-          <!-- Jumping Funny Ball (IN DEV) -->
-          <article class="card projectCenterCard centeredCard" role="button" tabindex="0"
-          data-title="Jumping Funny Ball"
-          data-shot="assets/jump_ball.jpg"
-          data-status="In development"
-          data-desc="Swipe to keep the ball bouncing and beat your high score!">
-
-    <div class="badge dev">IN DEV</div>
-
-    <div class="projectCenter">
-    <div class="projectIconCenter">
-      <img src="assets/icons/jump_ball.png" alt="Jumping Funny Ball icon" loading="lazy">
-    </div>
-
-      <h3>Jumping Funny Ball</h3>
-    <p>Tap to open details</p>
-  </div>
-</article>      
+      </section>     
 
     <!-- Contact -->
     <section id="contact" aria-label="Contact">
